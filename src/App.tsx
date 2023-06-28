@@ -1,11 +1,16 @@
-import './App.css';
+import { useState } from 'react';
+import MainLayout from './components/MainLayout';
 
 function App() {
+  const [categories, setCategories] = useState<string[]>([
+    'One',
+    'Two',
+    'Three',
+  ]);
+
   return (
     <>
-      <div>
-        <h3>Hello world</h3>
-      </div>
+      <MainLayout categories={categories} setCategories={setCategories} />
     </>
   );
 }
