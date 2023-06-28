@@ -1,15 +1,16 @@
-import './App.css';
+import { useState } from 'react';
+import MainLayout from './components/MainLayout';
 
 function App() {
+  const [categories, setCategories] = useState<string[]>([
+    'One',
+    'Two',
+    'Three',
+  ]);
+
   return (
     <>
-      <div>
-        <h3>Hello world</h3>
-        <h2>
-          Solucionar la parte de consumir lo de giphy y terminar el projecto el
-          28 de junio y hacer el test
-        </h2>
-      </div>
+      <MainLayout categories={categories} setCategories={setCategories} />
     </>
   );
 }
