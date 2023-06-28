@@ -8,9 +8,13 @@ function App() {
     'Three',
   ]);
 
+  const addNewCategory = (newCategory: string) => {
+    setCategories([newCategory, ...categories]);
+  };
+
   return (
     <>
-      <MainLayout categories={categories} setCategories={setCategories} />
+      <MainLayout categories={categories} onNewCategory={addNewCategory} />
     </>
   );
 }

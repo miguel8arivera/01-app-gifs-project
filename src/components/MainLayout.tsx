@@ -2,14 +2,14 @@ import SearchInput from './SearchInput';
 import TableImage from './TableImage';
 
 type MainLayoutProps = {
-  setCategories: React.Dispatch<React.SetStateAction<string[]>>;
   categories: string[];
+  onNewCategory?: (newCategory: string) => void;
 };
 
-const MainLayout = ({ categories, setCategories }: MainLayoutProps) => {
+const MainLayout = ({ categories, onNewCategory }: MainLayoutProps) => {
   return (
     <div>
-      <SearchInput setCategories={setCategories} />
+      <SearchInput onNewCategory={onNewCategory} />
       <h3>Aqui se cargara todo el proyecto</h3>
       <TableImage categories={categories} />
     </div>
