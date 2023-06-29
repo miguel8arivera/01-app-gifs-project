@@ -6,7 +6,7 @@ type Props = {
 
 const CardGifs = ({ title, url }: Props) => {
   return (
-    <div>
+    <div className="card">
       <img src={url} alt={title} />
       <p>{title}</p>
     </div>

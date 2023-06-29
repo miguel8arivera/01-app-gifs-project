@@ -20,7 +20,7 @@ type Props = {
 };
 
 export const getGifs = async (category?: string) => {
-  const URL = `https://api.giphy.com/v1/gifs/search?api_key=rwaappUeUylJfQoCiPpCoH5R4faHi876&q=${category}&limit=10`;
+  const URL = `https://api.giphy.com/v1/gifs/search?api_key=rwaappUeUylJfQoCiPpCoH5R4faHi876&q=${category}&limit=12`;
   const res = await fetch(URL);
   const { data } = await res.json();
   const gifs = data?.map((img: Props) => ({

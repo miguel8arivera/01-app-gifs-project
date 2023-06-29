@@ -7,9 +7,12 @@ function TableImage({ category }: { category: string }) {
   return (
     <>
       <h3>{category}</h3>
-      {images?.map((image) => (
-        <CardGifs key={image.id} {...image} />
-      ))}
+      <div>{isLoading && <p>Loading...</p>}</div>
+      <div className="card-grid">
+        {images?.map((image) => (
+          <CardGifs key={image.id} {...image} />
+        ))}
+      </div>
     </>
   );
 }
