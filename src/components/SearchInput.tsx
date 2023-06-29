@@ -23,13 +23,14 @@ function SearchInput({ onNewCategory }: SearchInputProps) {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form className="form" onSubmit={onSubmit}>
       <input
+        className="search-input"
         type="search"
         value={inputSearchValue}
         onChange={handleChangeInput}
       />
-      <button>Search</button>
+      <button className="search-button">Search</button>
     </form>
   );
 }

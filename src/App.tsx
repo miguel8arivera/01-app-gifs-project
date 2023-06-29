@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SearchInput from './components/SearchInput';
 import TableImage from './components/TableImage';
-
+import './App.css';
 function App() {
   const [categories, setCategories] = useState<string[]>(['']);
 
