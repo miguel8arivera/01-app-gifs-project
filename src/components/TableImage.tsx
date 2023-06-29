@@ -1,10 +1,14 @@
-function TableImage({ categories }: { categories: string[] }) {
+import CardGifs from './CardGifs';
+import useFetchGifs from '../hooks/useFetchGifs';
+
+function TableImage({ category }: { category: string }) {
+  const { images, isLoading } = useFetchGifs(category);
+
   return (
     <>
-      {categories?.map((category, index) => (
-        <ul key={index}>
-          <li>{category}</li>
-        </ul>
+      <h3>{category}</h3>
+      {images?.map((image) => (
+        <CardGifs key={image.id} {...image} />
       ))}
     </>
   );

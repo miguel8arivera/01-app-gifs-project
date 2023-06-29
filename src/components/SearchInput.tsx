@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 type SearchInputProps = {
   setCategories?: React.Dispatch<React.SetStateAction<string[]>>;
+  onNewCategory?: (newCategory: string) => void;
 };
 
-function SearchInput({ setCategories }: SearchInputProps) {
+function SearchInput({ onNewCategory }: SearchInputProps) {
   const [inputSearchValue, setInputSearchValue] = useState<string>('');
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,7 +17,7 @@ function SearchInput({ setCategories }: SearchInputProps) {
     e.preventDefault();
     if (inputSearchValue.trim().length <= 2) return;
     // setCategories && setCategories((prev) => [inputSearchValue, ...prev]);
-    setCategories && setCategories((prev) => [inputSearchValue, ...prev]);
+    onNewCategory && onNewCategory(inputSearchValue.trim());
 
     setInputSearchValue('');
   };

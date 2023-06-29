@@ -1,16 +1,21 @@
 import { useState } from 'react';
-import MainLayout from './components/MainLayout';
+import SearchInput from './components/SearchInput';
+import TableImage from './components/TableImage';
 
 function App() {
-  const [categories, setCategories] = useState<string[]>([
-    'One',
-    'Two',
-    'Three',
-  ]);
+  const [categories, setCategories] = useState<string[]>(['']);
+
+  const addNewCategory = (newCategory: string) => {
+    setCategories([newCategory, ...categories]);
+  };
 
   return (
     <>
-      <MainLayout categories={categories} setCategories={setCategories} />
+      <h2>Buscardor de Gifs:</h2>
+      <SearchInput onNewCategory={addNewCategory} />
+      {categories.map((category) => (
+        <TableImage key={category} category={category} />
+      ))}
     </>
   );
 }
