@@ -14,6 +14,7 @@ function SearchInput({ onNewCategory }: SearchInputProps) {
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log('onSubmit from component SearchInput');
     e.preventDefault();
     if (inputSearchValue.trim().length <= 2) return;
     // setCategories && setCategories((prev) => [inputSearchValue, ...prev]);
@@ -23,7 +24,7 @@ function SearchInput({ onNewCategory }: SearchInputProps) {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form" onSubmit={onSubmit} aria-label="form">
       <input
         className="search-input"
         type="search"
