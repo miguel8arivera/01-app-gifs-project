@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 type SearchInputProps = {
   setCategories?: React.Dispatch<React.SetStateAction<string[]>>;
-  onNewCategory?: (newCategory: string) => void;
+  onNewCategory: (newCategory: string) => void;
 };
 
 function SearchInput({ onNewCategory }: SearchInputProps) {
