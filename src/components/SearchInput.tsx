@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 type SearchInputProps = {
   setCategories?: React.Dispatch<React.SetStateAction<string[]>>;
-  onNewCategory?: (newCategory: string) => void;
+  onNewCategory: (newCategory: string) => void;
 };
 
 function SearchInput({ onNewCategory }: SearchInputProps) {
@@ -14,6 +14,7 @@ function SearchInput({ onNewCategory }: SearchInputProps) {
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log('onSubmit from component SearchInput');
     e.preventDefault();
     if (inputSearchValue.trim().length <= 2) return;
     // setCategories && setCategories((prev) => [inputSearchValue, ...prev]);
@@ -23,7 +24,7 @@ function SearchInput({ onNewCategory }: SearchInputProps) {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form" onSubmit={onSubmit} aria-label="form">
       <input
         className="search-input"
         type="search"
